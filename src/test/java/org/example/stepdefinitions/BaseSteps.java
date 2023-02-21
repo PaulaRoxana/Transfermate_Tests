@@ -23,9 +23,9 @@ public class BaseSteps {
         driver.manage().window().maximize();
     }
 
-    @After
-    public void teardown() {
-        driver.quit();
-    }
+//    @After
+//    public void teardown() {
+//        driver.quit();
+//    }
 }
 

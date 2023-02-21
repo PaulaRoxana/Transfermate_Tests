@@ -3,6 +3,7 @@ package org.example.page_object;
 import lombok.Getter;
 import org.example.utils.TypesOfLocators;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -34,7 +35,7 @@ public class SignUpPage extends BasePage {
     private static final By errorMessageForTryingToRegisterWithAnAlreadyUsedEmail = By.id("register_email_error");
     private static final By errorMessageForTryingToRegisterWithAnAlreadyUsedPhoneNumber = By.id("register___pin_mobile_number_error");
     private static final By errorMessageForNotCheckingTheTermsOfUseAndPrivacyPolicyCheckbox = By.id("register_terms_of_use_agree_error");
-    private static final By openMyFreeAccountButton = By.id("button_subscribe");
+    private static final By openMyFreeAccountButton = By.id("button_subscribe");//button_subscribe
     private static final By errorForNotSelectingAnAccountTypeAtSignUp
             = By.xpath("(//div[text()='Please Select Account Type'])[1]");
     private static final By acceptCookies = By.id("cookies-read-more-link");
@@ -44,11 +45,12 @@ public class SignUpPage extends BasePage {
         super(driver);
     }
 
-    public void openSignUpPage() {
+    public SignUpPage openSignUpPage() {
         driver.get("https://transfermate.io/en/register.asp?");
         driver.manage().window().maximize();
-        //  driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
         if (driver.findElement(acceptCookies).isDisplayed()) driver.findElement(acceptCookies).click();
+        return this;
     }
 
     public String getCurrentPageTitle() {
@@ -76,7 +78,8 @@ public class SignUpPage extends BasePage {
 
         WebElement field = getElementBy(TypesOfLocators.ID, path, 2);
         field.sendKeys(sentKeys);
-        // field.sendKeys(Keys.TAB);
+        //field.sendKeys(Keys.TAB);
+        field.submit();
     }
 
     public void checkTheTermsOfUseAndPrivacyPolicyCheckbox(boolean ok) {
@@ -84,6 +87,7 @@ public class SignUpPage extends BasePage {
             new WebDriverWait(driver, Duration.ofMillis(15000))
                     .until(ExpectedConditions.elementToBeClickable(termsOfUseAndPrivacyPolicyCheckbox))
                     .click();
+            driver.findElement(termsOfUseAndPrivacyPolicyCheckbox).submit();
         }
     }
 
@@ -92,6 +96,7 @@ public class SignUpPage extends BasePage {
             new WebDriverWait(driver, Duration.ofMillis(15000))
                     .until(ExpectedConditions.elementToBeClickable(newsAndOffersCheckbox))
                     .click();
+            driver.findElement(termsOfUseAndPrivacyPolicyCheckbox).submit();
         }
     }
 
@@ -123,6 +128,7 @@ public class SignUpPage extends BasePage {
 
     public void fillSolvedCaptcha() {
         fillInCaptchaResult(getResultOfSolvedCaptcha());
+        driver.findElement(captchaResultBox).submit();
     }
 
     public EmailAndMobileNumberVerificationPage clickOnOpenMyFreeAccountButton() {

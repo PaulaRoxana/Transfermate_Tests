@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 public class ServiceUtils {
-    private static final String CHAR_SET_OF_LETTERS = "abcdeghijklmopqrtuvwxyz";
+    private static final String CHAR_SET_OF_LETTERS = "abcdghijklmopqrtuvwxyz";
     Faker faker = new Faker();
 
 

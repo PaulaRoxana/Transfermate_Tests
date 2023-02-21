@@ -1,6 +1,5 @@
 Exploratory Testing - 
 
-
 TC_1.1 - TC_1.5 -> (TC_1.2 /"Individual" - implemented in ExploratoryTesting Class)
 i)SUMMARY/TITLE:  check that Sign Up form contains one radio button for each of the following labels "Education"/"Individual"/"Corporate"/"Partnership"/"Sole Trader"
 ii)PRECONDITION:-
@@ -45,7 +44,8 @@ i)SUMMARY/TITLE: check that if user types a letter in the "Country" field the fi
 ii)PRECONDITION: Open Sign Up Page
 iii)STEPS/+TEST DATA: 1) Type a letter in the "Country" field
 iv)EXPECTED RESULT: the field should be populated with the first country in the dropdown that starts with that letter
-v)ACTUAL RESULT: The field is populated with the first country  in the dropdown  that starts with that letter
+v)ACTUAL RESULT:  In most cases the field is populated with the first country  in the dropdown  that starts
+with that letter; however, the behaviour of the field needs in depth analysis in order to create relevant test cases
 
 TC_3.2
 i)SUMMARY/TITLE: check that if user starts typing in the "Country" field the field will be populated with the first
@@ -55,7 +55,7 @@ iii)STEPS/+TEST DATA: 1)Type some text in the "Country" field, looking for a spe
 iv)EXPECTED RESULT: the field should be populated with the first country in the dropdown that matches the value and when unfolding 
                     the dropdown the country should be highlighted
 v)ACTUAL RESULT: the field is populated with the first country in the dropdown that matches the value and when unfolding
-                    the dropdown the country should be highlighted
+                    the dropdown the country is highlighted
 
 TC_3.3
 i)SUMMARY/TITLE: check that if user starts typing in the "Country" field characters that do not match the options in dropdown
@@ -175,7 +175,7 @@ iii)STEPS/+TEST DATA:
 9) Try to insert an email address with empty username, then Click submit
 10) Try to insert an email address with empty domain, then Click submit
 iv)EXPECTED RESULT:
-1) No error message should appear above the field
+1) Correct/specific error message should appear above the field
 2) Correct/specific error message should appear above the field: "The field is mandatory"
 3) Correct/specific error message should appear above the field
 4) Correct/specific error message should appear above the field
@@ -208,21 +208,21 @@ iii)STEPS/+TEST DATA:
 3) Try to insert only letters, then Click submit
 4) Try to insert only special characters, then Click submit
 5) Verify that the "Mobile Phone" field allows the user to enter a mobile phone number with or without dashes <->, parenthesis/round brackets <()>, spaces<   >
-   and after Clicking submit the application should remove the spaces, dashes, parenthesis/round brackets if any
+   and after Clicking submit, the application should remove the spaces, dashes, parenthesis/round brackets if any
 iv)EXPECTED RESULT:
-1) No error message should appear above the field
+1)Correct/specific error message should appear above the field
 2) Correct/specific error message should appear above the field: "The field is mandatory"
-3) Correct/specific error message should appear above the field
-4) Correct/specific error message should appear above the field
-5) user should be allowed to enter a mobile phone number with or without dashes <->, parenthesis/round brackets <()>, spaces<   >
-   and after Clicking submit the application should remove the spaces, dashes, parenthesis/round brackets if any
+3) Correct/specific error message should appear above the field  OR It should be impossible to fill or paste the field by letters
+4) Correct/specific error message should appear above the field  OR It should be impossible to fill or paste the field by special characters other than  dashes <->, parenthesis/round brackets <()>, spaces <   >
+5) user should be allowed to enter a mobile phone number with or without dashes <->, parenthesis/round brackets <()>, spaces <   >
+   and after Clicking submit, the application should remove the spaces, dashes, parenthesis/round brackets if any
 v)ACTUAL RESULT:
 1) No error message appears above the field
 2) error message: "Please enter correct information!" appears above the field
 3) error message: "Please enter correct information!" appears above the field
 4) error message: "Please enter correct information!" appears above the field
 5) user is allowed to enter a mobile phone number with or without dashes <->, parenthesis/round brackets <()>, spaces<   >
-   and after Clicking submit the application removes the spaces, dashes, parenthesis/round brackets if any
+   and after Clicking submit, the application removes the spaces, dashes, parenthesis/round brackets if any
 
 TC_8.2
 i)SUMMARY/TITLE: Check the validator of length on the field "Mobile Phone" - the field should support a
@@ -277,21 +277,20 @@ v)ACTUAL RESULT: User is registered and navigated to Email And Mobile Number Ver
 
 TC_9_4 - (detailed test case  -> signUpFeature)
 i)SUMMARY/TITLE: (Verify) user cannot proceed on Email And Mobile Number Verification Page
-without checking the Terms of Use and Privacy Policy checkbox
+without checking the "Terms of Use and Privacy Policy" checkbox
 ii)PRECONDITION: Open Sign Up Page
-iii)STEPS/+TEST DATA: User fills in all required user data, without checking the Terms of Use and Privacy Policy checkbox
-iv)EXPECTED RESULT: -Correct error message should appear above the Terms of Use and Privacy Policy checkbox:
+iii)STEPS/+TEST DATA: User fills in all required user data, without checking the "Terms of Use and Privacy Policy" checkbox
+iv)EXPECTED RESULT: -Correct error message should appear above the "Terms of Use and Privacy Policy" checkbox:
 "Click OK to return and check the box that you have read and agree with our Terms of Use";
                     -User should remain on Sign Up Page
-v)ACTUAL RESULT:-Correct error message appears above the Terms of Use and Privacy Policy checkbox: "Click OK to return and check the box that you have read and agree with our Terms of Use";
+v)ACTUAL RESULT:-Correct error message appears above the "Terms of Use and Privacy Policy" checkbox: "Click OK to return and check the box that you have read and agree with our Terms of Use";
                 -User remains on Sign Up Page
 
 TC_9_5 - (detailed test case  -> signUpFeature)
-i)SUMMARY/TITLE: (Verify) user can proceed on Email And Mobile Number Verification Page
-without checking the News and Offers checkbox
+i)SUMMARY/TITLE: (Verify) user can proceed on Email And Mobile Number Verification Page without checking the "News and Offers" checkbox
 ii)PRECONDITION: Open Sign Up Page
-iii)STEPS/+TEST DATA: User fills in all required user data, checking the Terms of Use and Privacy Policy checkbox,
-without checking the News and Offers checkbox
+iii)STEPS/+TEST DATA: User fills in all required user data, checking the "Terms of Use and Privacy Policy" checkbox,
+without checking the "News and Offers" checkbox
 iv)EXPECTED RESULT: User should be registered and  navigated to Email And Mobile Number Verification Page
 v)ACTUAL RESULT:User is registered and redirected to Email And Mobile Number Verification Page
 
