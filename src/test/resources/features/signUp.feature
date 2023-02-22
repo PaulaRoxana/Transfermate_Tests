@@ -37,7 +37,7 @@
     And user checks the Terms of Use and Privacy Policy checkbox
     And user checks the News and Offers checkbox
     And user enters the correct captcha result
-#    And user clicks on Open my free account button
+    And user clicks on Open my free account button
     Then error message "Already exists!" is displayed above Email field
     And user remains on Sign Up page
     Examples:
@@ -76,7 +76,7 @@
       | last_name    | generateRandom |
       | email        | generateRandom |
       | phone_prefix | Romania        |
-      | mobile_phone | generateRandom |
+      | mobile_phone | 1452850746     |
     And user checks the News and Offers checkbox
     And user enters the correct captcha result
     And user clicks on Open my free account button
@@ -96,7 +96,7 @@
       | last_name         | generateRandom          |
       | email             | generateRandom          |
       | phone_prefix      | Romania                 |
-      | mobile_phone      | generateRandom          |
+      | mobile_phone      | 1452850746              |
     And user checks the Terms of Use and Privacy Policy checkbox
     And user enters the correct captcha result
     And user clicks on Open my free account button
