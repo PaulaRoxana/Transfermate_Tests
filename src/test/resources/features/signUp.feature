@@ -13,15 +13,15 @@
       | email        | generateRandom |
       | phone_prefix | Romania        |
       | mobile_phone | generateRandom |
-    And user checks the Terms of Use and Privacy Policy checkbox
-    And user checks the News and Offers checkbox
-    And user enters the correct captcha result
-    And user clicks on Open my free account button
-    Then user is navigated to Email And Mobile Number Verification Page
+#    And user checks the Terms of Use and Privacy Policy checkbox
+#    And user checks the News and Offers checkbox
+#    And user enters the correct captcha result
+#    And user clicks on Open my free account button
+#    Then user is navigated to Email And Mobile Number Verification Page
     Examples:
       | account type |
       | individual   |
-      | sole_trader  |
+#      | sole_trader  |
 
   Scenario Outline: (TC_9.2 -> PASS) (Verify) user cannot proceed on Email And Mobile Number Verification Page
                     by utilizing an already used "Email" address

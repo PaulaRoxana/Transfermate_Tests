@@ -9,7 +9,7 @@ public enum SupportedBrowsers {
     LOCAL_CHROME(new LocalChromeInvoker()),
     LOCAL_FIREFOX(new LocalFirefoxInvoker());
 
-    private WebDriverInvoker webDriverInvoker;
+    private final WebDriverInvoker webDriverInvoker;
 
     SupportedBrowsers(WebDriverInvoker webDriverInvoker) {
         this.webDriverInvoker = webDriverInvoker;
